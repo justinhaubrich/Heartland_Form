@@ -12,7 +12,17 @@
     padding: 25px;
     border: 1px solid #ddd;
     border-top : 10px solid #0071ce;
+    border-radius: 0px 0px 3px 3px;
     max-width: 850px;
+}
+#form_wrapper:hover {
+    box-shadow: 1px 1px #ddd;
+}
+#form_wrapper input:hover {
+    border: 2px solid #0071ce;
+}
+#form_wrapper input:focus {
+    outline: unset;
 }
 #heartland_form {
     width: 90%;
@@ -60,7 +70,19 @@
 }
 
 #form_wrapper button#submit_btn {
-    font-size: 16px;
+    font-size: 18px;
+    border-radius: 25px;
+    padding: 10px;
+    border: none;
+}
+#form_wrapper button:focus {
+    border: none;
+    appearance: none;
+    outline: none;
+}
+#form_wrapper button:hover {
+    background-color: #0071ce;
+    color: white;
 }
 
 #required_notice {

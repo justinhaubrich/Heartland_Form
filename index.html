@@ -21,7 +21,7 @@
                 <input type="text" id="fname"/>
                 <label for="lname">Last Name*</label>
                 <input type="text" id="lname"/>
-                <label for="email">E-mail*</label>
+                <label for="email">Email*</label>
                 <input type="email" id="email"/>
                 <span id="zip_age_wrapper">
                     <label for="zip">Zip*</label>
@@ -30,7 +30,7 @@
                     <input type="number" id="age"/>
                 </span>
                 <span id="age_confirm_radios">
-                    <label>Do you agree to our terms of service?</label>
+                    <label>Do you agree to our terms of service?*</label>
                     <br>
                     <label>
                         <input type="radio" id="yes" name="terms" value="yes">
@@ -42,13 +42,14 @@
                     </label>
                 </span>
                 <span id="optin_wrapper">
-                    <label for="opt-in">Opt-in*</label>
-                    <input type="checkbox" id="opt-in"/>
+                    <label for="opt-in">Opt-in to Heartland promotional emails?
+                        <input type="checkbox" id="opt_in"/>
+                    </label>
                 </span>
-                <button id="submit_btn" onclick="event.preventDefault();">Submit</button>
+                <button id="submit_btn" onclick="event.preventDefault();validate()">Submit</button>
             </form>
             <span id="required_notice">Asterisk indicates required fields</span>
         </div>
-        <script src="script/scripts.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
