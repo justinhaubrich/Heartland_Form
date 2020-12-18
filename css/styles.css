@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+#form_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 75%;
+    margin: auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+}
+#heartland_form {
+    width: 90%;
+    max-width:550px;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+}
+#form_wrapper #heartland_form>input, #form_wrapper #heartland_form button, #form_wrapper #optin_wrapper {
+    margin-bottom: 20px;
+    width:100%;
+}
+#form_wrapper label {
+    width: 100%;
+}
+
+#form_wrapper #optin_wrapper {
+    margin-bottom: 20px;
+}
+
+#form_wrapper #optin_wrapper input[type=checkbox] {
+    vertical-align: middle;
+}
+#zip_age_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    grid-column-gap: 20px;
+    margin-bottom: 20px;
+}
+
+#zip_age_wrapper label{
+     width: unset;
+}
+#zip_age_wrapper input {
+    width: unset;
+}

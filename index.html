@@ -15,13 +15,23 @@
     <body>
         <div id="form_wrapper">
             <form id="heartland_form">
-                <label for="fname">First Name:</label></label><input type="text" id="fname"/><br>
-                <label for="lname">Last Name:</label><input type="text" id="lname"/><br>
-                <label for="email">E-mail:</label><input type="email" id="email"/><br>
-                <label for="zip">Zip Code:</label><input type="number" id="zip"/><br>
-                <label for="age">Your Age:</label><input type="number" id="age"/><br>
-                <label for="opt-in">Opt-in:</label><input type="checkbox" id="opt-in"/><br>
-                <label for="submit">Submit:</label><input type="checkbox" id="submit"/><br>
+                <label for="fname">First Name</label>
+                <input type="text" id="fname"/>
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname"/>
+                <label for="email">E-mail</label>
+                <input type="email" id="email"/>
+                <span id="zip_age_wrapper">
+                    <label for="zip">Zip Code</label>
+                    <input type="number" id="zip"/>
+                    <label for="age">Your Age</label>
+                    <input type="number" id="age"/>
+                </span>
+                <span id="optin_wrapper">
+                    <label for="opt-in">Opt-in</label>
+                    <input type="checkbox" id="opt-in"/>
+                </span>
+                <button onclick="event.preventDefault();">Submit</button>
             </form>
         </div>
         <script src="js/scripts.js"></script>
