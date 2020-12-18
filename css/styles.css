@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
 
 #form_wrapper {
@@ -9,6 +11,8 @@
     margin: auto;
     padding: 25px;
     border: 1px solid #ddd;
+    border-top : 10px solid #0071ce;
+    max-width: 850px;
 }
 #heartland_form {
     width: 90%;
@@ -19,7 +23,10 @@
 }
 #form_wrapper #heartland_form>input, #form_wrapper #heartland_form button, #form_wrapper #optin_wrapper {
     margin-bottom: 20px;
-    width:100%;
+    width: 100%;
+}
+#form_wrapper button, #form_wrapper input[type=radio], #form_wrapper input[type=checkbox]{
+    cursor: pointer;
 }
 #form_wrapper label {
     width: 100%;
@@ -34,14 +41,39 @@
 }
 #zip_age_wrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr;
+    grid-template-columns: 1fr 8fr 1fr 1fr;
     grid-column-gap: 20px;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 #zip_age_wrapper label{
      width: unset;
 }
-#zip_age_wrapper input {
+#zip_age_wrapper input, #form_wrapper input {
     width: unset;
+    padding: 5px;
+}
+
+#form_wrapper #age_confirm_radios {
+    margin-bottom: 20px;
+}
+
+#form_wrapper button#submit_btn {
+    font-size: 16px;
+}
+
+#required_notice {
+    font-size:10px;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width:850px) {
+    #zip_age_wrapper {
+        grid-template-columns: 1fr;
+    }
+    #zip_age_wrapper input#zip {
+        margin-bottom: 20px;
+    }
 }
