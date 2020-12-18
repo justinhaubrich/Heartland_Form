@@ -14,6 +14,9 @@
     border-top : 10px solid #0071ce;
     border-radius: 0px 0px 3px 3px;
     max-width: 850px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 #form_wrapper:hover {
     box-shadow: 1px 1px #ddd;
@@ -97,5 +100,17 @@
     }
     #zip_age_wrapper input#zip {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    #heartland_form {
+        margin: unset;
+        font-size: 12px;
+    }
+    #form_wrapper {
+        padding: 10px;
+        justify-items: center;
+        width: 90%;
     }
 }
