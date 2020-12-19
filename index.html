@@ -16,6 +16,7 @@
     </head>
 
     <body>
+        <div id="form_wrapper_top"></div>
         <div id="form_wrapper">
             <form id="heartland_form">
                 <label for="fname">First Name*</label>
@@ -56,7 +57,7 @@
         </div>
         <div class="style-toggle">
             <label class="switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
+                <input type="checkbox" id="checkbox" onchange="toggle_dark_mode()"/>
                 <div class="slider round"></div>
             </label>
             <p>Switch to Dark Mode</p>

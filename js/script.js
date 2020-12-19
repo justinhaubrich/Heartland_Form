@@ -54,3 +54,24 @@ function validate () {
     }
     console.log(errors);
 }
+
+function toggle_dark_mode() {
+    const p = document.querySelector('.style-toggle p');
+    const body = document.body;
+    const form_wrapper = document.getElementById('form_wrapper');
+    const form_wrapper_top = document.getElementById('form_wrapper_top');
+    const isDarkMode = (form_wrapper.classList.contains('dark')) ? true : false ;
+    if (isDarkMode) {
+        form_wrapper.classList.remove('dark');
+        form_wrapper_top.classList.remove('dark');
+        p.innerText = "Switch to Dark Mode";
+        p.style.color = "#121212";
+        body.style.backgroundColor = "#FFF";
+    } else {
+        form_wrapper.classList.add('dark');
+        form_wrapper_top.classList.add('dark');
+        p.innerText = "Switch to Light Mode";
+        p.style.color = "#FFF";
+        body.style.backgroundColor = "#424242";
+    }
+}
