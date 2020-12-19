@@ -10,6 +10,7 @@
     width: 75%;
     display: grid;
     margin: auto;
+    margin-top: 25px;
 }
 #form_wrapper_top.dark {
     background-color: #FFF;
@@ -57,6 +58,9 @@
 }
 #form_wrapper label {
     width: 100%;
+}
+#form_wrapper #optin_wrapper label {
+    width: fit-content;
 }
 
 #form_wrapper #optin_wrapper {
@@ -295,5 +299,29 @@ input:checked + .slider:before {
         padding: 10px;
         justify-items: center;
         width: 90%;
+    }
+    #form_wrapper_top {
+        width: 90%;
+    }
+    #terms_radios label {
+        margin-top: 5px;
+    }
+}
+@media (max-width: 600px) {
+    #optin_wrapper>label {
+        line-height: 18px;
+        height: unset;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #optin_wrapper span.checkbox {
+        position: unset;
+        padding: 5px 0 0 8px;
+    }
+    #form_wrapper #optin_wrapper label {
+        align-items: center;
+    }
+    #optin_wrapper .checkbox:after {
+        position: unset;
     }
 }
