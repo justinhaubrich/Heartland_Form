@@ -30,21 +30,24 @@
                     <label for="age">Age*</label>
                     <input type="number" id="age"/>
                 </span>
-                <span id="age_confirm_radios">
+                <span id="terms_radios">
                     <label>Do you agree to our terms of service?*</label>
                     <br>
                     <label>
                         <input type="radio" id="yes" name="terms" value="yes">
-                        Yes
+                        <span class="checkmark"></span>
+                        <span class="radio-text">Yes</span>
                     </label>
                     <label>
                         <input type="radio" id="no" name="terms" value="no">
-                        No
+                        <span class="checkmark"></span>
+                        <span class="radio-text">No</span>
                     </label>
                 </span>
                 <span id="optin_wrapper">
                     <label for="opt_in">Opt-in to Heartland promotional emails?
                         <input type="checkbox" id="opt_in"/>
+                        <span class="checkbox"></span>
                     </label>
                 </span>
                 <button id="submit_btn" onclick="event.preventDefault();validate()">Submit</button>

@@ -68,7 +68,7 @@
     padding: 5px;
 }
 
-#form_wrapper #age_confirm_radios {
+#form_wrapper #terms_radios {
     margin-bottom: 20px;
 }
 
@@ -92,6 +92,50 @@
     font-size:10px;
     display: block;
     margin: auto;
+}
+
+#terms_radios>label {
+    position: relative;
+    height: 25px;
+    display: inline-block;
+    width: auto;
+}
+#terms_radios input {
+    opacity: 0;
+}
+#terms_radios .checkmark {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50px;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+#terms_radios .checkmark:hover {
+    background-color: #ddd;
+}
+#terms_radios input:checked ~ .checkmark {
+    background-color: #0071ce;
+}
+#terms_radios input ~ .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+#terms_radios input:checked ~ .checkmark:after {
+    display:block;
+}
+#terms_radios .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+#terms_radios .radio-text {
+    margin: 0 5px 0 5px;
 }
 
 @media (max-width:850px) {
