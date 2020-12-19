@@ -8,6 +8,7 @@ function validate () {
     const age = parseInt(document.getElementById('age').value);
     const agreed = document.getElementById('yes').checked;
     const opt_in = document.getElementById('opt_in').checked;
+    const message_div = document.getElementById("message");
 
     //regexes for validation
     const name_regex = /^[a-z.'-]+$/i;
@@ -19,8 +20,14 @@ function validate () {
     //check errors and display results to user
     if (errors.length > 0) {
         //there were errors
+        let message_html = (errors.length === 1)? "Hold on, there is an issue:<br>":"Hold on, there are some issues:<br>";
+        errors.forEach( (error) => {
+            message_html += error + "<br>";
+        });
+        message_div.innerHTML = message_html;
     } else {
         //there were no errors
+        message_div.innerText = "Thank you, your information have been received.";
     }
 
     //for debugging
