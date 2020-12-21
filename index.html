@@ -20,30 +20,30 @@
         <div id="form_wrapper">
             <div id="message">Welcome!</div>
             <form id="heartland_form">
-                <span class="input_wrapper">
+                <span class="input_wrapper fname">
                     <span class="input_icon"></span>
-                    <input type="text" id="fname" required placeholder="First Name*" onkeypress="remove_msg()"/>
+                    <input type="text" id="fname" required placeholder="First Name*" onclick="remove_msg()"/>
                     <span class="validation_message"></span>
                 </span>
-                <span class="input_wrapper">
+                <span class="input_wrapper lname">
                     <span class="input_icon"></span>
-                    <input type="text" id="lname" required placeholder="Last Name*" onkeypress="remove_msg()"/>
+                    <input type="text" id="lname" required placeholder="Last Name*" onclick="remove_msg()"/>
                     <span class="validation_message"></span>
                 </span>
-                <span class="input_wrapper">
+                <span class="input_wrapper email">
                     <span class="input_icon"></span>
-                    <input type="email" id="email" required placeholder="Email*" onkeypress="remove_msg()"/>
+                    <input type="email" id="email" required placeholder="Email*" onclick="remove_msg()"/>
                     <span class="validation_message"></span>
                 </span>
                 <span id="zip_age_wrapper">
-                    <span class="input_wrapper">
+                    <span class="input_wrapper zip">
                         <span class="input_icon"></span>
-                        <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10" required placeholder="Zip*" onkeypress="remove_msg()"/>
+                        <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10" required placeholder="Zip*" onclick="remove_msg()"/>
                         <span class="validation_message"></span>
                     </span>
-                    <span class="input_wrapper">
+                    <span class="input_wrapper age">
                         <span class="input_icon"></span>
-                        <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3" required placeholder="Age*" onkeypress="remove_msg()"/>
+                        <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3" required placeholder="Age*" onclick="remove_msg()"/>
                         <span class="validation_message"></span>
                     </span>
                 </span>

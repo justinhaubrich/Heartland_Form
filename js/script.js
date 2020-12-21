@@ -43,25 +43,57 @@ function validate () {
     function check_input (fname, lname, email, zip, age, agreed) {
         if (fname.match(name_regex) === null || fname.length < 2)  {
             errors.push({field:"fname", msg: "You did not enter a valid first name."});
+        } else {
+            //add the icon to the input
+            let el = document.querySelector('.input_wrapper.fname .input_icon'); 
+            el.classList.remove('invalid');
+            el.classList.add('valid');
         }
         if (lname.match(name_regex) === null || lname.length < 2) {
             errors.push({field: "lname", msg:"You did not enter a valid last name."});
+        } else {
+            //add the icon to the input
+            let el = document.querySelector('.input_wrapper.lname .input_icon'); 
+            el.classList.remove('invalid');
+            el.classList.add('valid');
         }
         if (email.match(email_regex) === null) {
             errors.push({field: "email", msg:"You did not enter a valid email address."});
+        } else {
+            //add the icon to the input
+            let el = document.querySelector('.input_wrapper.email .input_icon'); 
+            el.classList.remove('invalid');
+            el.classList.add('valid');
         }
         if (zip.match(zip_regex) === null) {
             errors.push({field:"zip",msg:"You did not enter a valid zip code."});
+        } else {
+            //add the icon to the input
+            let el = document.querySelector('.input_wrapper.zip .input_icon'); 
+            el.classList.remove('invalid');
+            el.classList.add('valid');
         }
-        if (isNaN(age)) {
-            errors.push({field: "age", msg:"You must enter your age."});
+        if (isNaN(age) || age < 18 || age > 110) {
+            if (isNaN(age)) {
+                errors.push({field: "age", msg:"You must enter your age."});
+            }
+            if (age <18) {
+                errors.push({field: "age", msg:"You must be at least 18."});
+            }
+            if (age > 110) {
+                errors.push({field: "age", msg:"You must be enter a valid age."});
+            }
+            //add the icon to the input
+            let el = document.querySelector('.input_wrapper.age .input_icon'); 
+            el.classList.remove('valid');
+            el.classList.add('invalid');
+        } else {
+            //add the icon to the input
+            let el = document.querySelector('.input_wrapper.age .input_icon'); 
+            el.classList.remove('invalid');
+            el.classList.add('valid');
         }
-        if (age < 18) {
-            errors.push({field : "age",msg:"You must be at least 18 years old."});
-        }
-        if (age > 110) {
-            errors.push({field : "age",msg:"You did not enter a valid age."});
-        }
+       
         if (!agreed) {
             errors.push({field: "terms", msg: "You must agree to our terms of service."});
         }
