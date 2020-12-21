@@ -14,12 +14,27 @@
 #form_wrapper .bold {
     font-weight: bold;
 }
-#form_wrapper input {
-    padding: 15px;
+#form_wrapper .input_wrapper {
+    height: 50px;
     border-radius: 0px;
     border: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: 40px 12fr;
+    position: relative;
 }
 
+#form_wrapper .input_wrapper input {
+    border: none;
+}
+#form_wrapper .input_wrapper:hover {
+    border: 1px solid #0071ce;
+}
+#form_wrapper .input_wrapper .validation_message {
+    position: absolute;
+    bottom: 2px;
+    left: 40px;
+    font-size: 12px;
+}
 #form_wrapper_top {
     height: 10px;
     background-color: #0071ce;
@@ -52,9 +67,7 @@
 #form_wrapper.dark:hover {
     box-shadow: 0px 2px #FFF;
 }
-#form_wrapper input:hover {
-    border: 1px solid #0071ce;
-}
+
 #form_wrapper input:focus {
     outline: unset;
 }

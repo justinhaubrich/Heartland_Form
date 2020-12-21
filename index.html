@@ -20,12 +20,32 @@
         <div id="form_wrapper">
             <div id="message">Welcome!</div>
             <form id="heartland_form">
-                <input type="text" id="fname" required placeholder="First Name*"/>
-                <input type="text" id="lname" required placeholder="Last Name*"/>
-                <input type="email" id="email" required placeholder="Email*"/>
+                <span class="input_wrapper">
+                    <span class="input_icon"></span>
+                    <input type="text" id="fname" required placeholder="First Name*"/>
+                    <span class="validation_message"></span>
+                </span>
+                <span class="input_wrapper">
+                    <span class="input_icon"></span>
+                    <input type="text" id="lname" required placeholder="Last Name*"/>
+                    <span class="validation_message"></span>
+                </span>
+                <span class="input_wrapper">
+                    <span class="input_icon"></span>
+                    <input type="email" id="email" required placeholder="Email*"/>
+                    <span class="validation_message"></span>
+                </span>
                 <span id="zip_age_wrapper">
-                    <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10" required placeholder="Zip*"/>
-                    <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3" required placeholder="Age*"/>
+                    <span class="input_wrapper">
+                        <span class="input_icon"></span>
+                        <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10" required placeholder="Zip*"/>
+                        <span class="validation_message"></span>
+                    </span>
+                    <span class="input_wrapper">
+                        <span class="input_icon"></span>
+                        <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3" required placeholder="Age*"/>
+                        <span class="validation_message"></span>
+                    </span>
                 </span>
                 <span id="terms_radios">
                     <label>Do you agree to our terms of service?*</label>
