@@ -35,6 +35,9 @@
     grid-template-columns: 40px 12fr;
     position: relative;
     background-color: white;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
 }
 #form_wrapper .input_icon, #form_wrapper input {
     background-color: #fff;
@@ -45,6 +48,9 @@
 }
 #form_wrapper .input_wrapper:hover {
     border: 1px solid #0071ce;
+}
+#form_wrapper.dark .input_wrapper .validation_message, #form_wrapper.dark .terms_error {
+    color: #9f0020;
 }
 #form_wrapper .input_wrapper .validation_message {
     position: absolute;
@@ -83,10 +89,10 @@
     -webkit-user-select: none;
 }
 #form_wrapper:hover {
-    box-shadow: 0px 2px #ddd;
+    /*box-shadow: 0px 2px #ddd;*/
 }
 #form_wrapper.dark:hover {
-    box-shadow: 0px 2px #FFF;
+    /*box-shadow: 0px 2px #FFF;*/
 }
 
 #form_wrapper input:focus {
@@ -124,6 +130,7 @@
     grid-template-columns: 1fr 1fr;
     margin-bottom: 20px;
     align-items: center;
+    grid-column-gap: 5px;
 }
 
 #zip_age_wrapper label{
@@ -153,7 +160,7 @@
     color: white;
 }
 #form_wrapper.dark button:hover {
-    background-color: #03DAC6;
+    background-color: #049e8f;
 }
 
 #required_notice {
@@ -186,7 +193,7 @@
     background-color: #ddd;
 }
 #form_wrapper.dark #terms_radios input:checked ~ .checkmark {
-    background-color: #03DAC6;
+    background-color: #049e8f;
 }
 #terms_radios input:checked ~ .checkmark {
     background-color: #0071ce;
@@ -238,7 +245,7 @@
     background-color: #0071ce;
 }
 #form_wrapper.dark #optin_wrapper input:checked  ~ .checkbox {
-    background-color: #03DAC6;
+    background-color: #049e8f;
 }
 #optin_wrapper .checkbox:after {
     content: "";
@@ -318,17 +325,44 @@ input:checked + .slider:before {
     font-size: 10px;
 }
 
-#zip_age_wrapper #age {
+
+#form_wrapper.dark  button, #form_wrapper.dark .checkmark, #form_wrapper.dark .checkbox {
+    background-color: #fff;
+}
+#form_wrapper.dark .input_wrapper {
+    border: 1px solid #fff;
+    border-top: 1px solid #03DAC5;
+    border-left: 1px solid #03DAC5;
+    border-right: 1px solid #03DAC5;
+    background-color: #03DAC5;
+}
+#form_wrapper.dark .input_icon, #form_wrapper.dark input {
+    background-color: #03DAC5; 
+    color: #fff;
+}
+#form_wrapper.dark ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
 }
 
+#form_wrapper.dark :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: red;
+}
+
+#form_wrapper.dark ::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
+}
 #form_wrapper.dark {
-    background-color: #121212; 
-    border: 1px solid #121212;
+    background-color: #03DAC5; 
+    border: 1px solid #03dac5;
     color:#03DAC5; 
     color: #fff;
 }
 #form_wrapper.dark .input_wrapper:hover {
-    border: 1px solid #03DAC5;
+    border: 1px solid #049e8f;
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
 }
 .terms_error {
     display: block;
