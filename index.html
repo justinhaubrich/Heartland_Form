@@ -18,7 +18,7 @@
     <body>
         <div id="form_wrapper_top"></div>
         <div id="form_wrapper">
-            <div id="message"></div>
+            <div id="message">Welcome!</div>
             <form id="heartland_form">
                 <label for="fname">First Name*</label>
                 <input type="text" id="fname"/>
@@ -28,9 +28,9 @@
                 <input type="email" id="email"/>
                 <span id="zip_age_wrapper">
                     <label for="zip">Zip*</label>
-                    <input type="number" id="zip"/>
+                    <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10"/>
                     <label for="age">Age*</label>
-                    <input type="number" id="age"/>
+                    <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3"/>
                 </span>
                 <span id="terms_radios">
                     <label>Do you agree to our terms of service?*</label>

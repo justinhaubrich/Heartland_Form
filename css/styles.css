@@ -3,11 +3,23 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
 }
+*:focus {
+    outline: unset;
+}
+#form_wrapper #message {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+#form_wrapper .bold {
+    font-weight: bold;
+}
 
 #form_wrapper_top {
     height: 10px;
     background-color: #0071ce;
     width: 75%;
+    max-width: 850px;
     display: grid;
     margin: auto;
     margin-top: 25px;

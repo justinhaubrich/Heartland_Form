@@ -4,7 +4,7 @@ function validate () {
     const fname = document.getElementById('fname').value.trim();
     const lname = document.getElementById('lname').value.trim();
     const email = document.getElementById('email').value.trim();
-    const zip = document.getElementById('zip').value;
+    const zip = document.getElementById('zip').value.toString();
     const age = parseInt(document.getElementById('age').value);
     const agreed = document.getElementById('yes').checked;
     const opt_in = document.getElementById('opt_in').checked;
@@ -20,7 +20,7 @@ function validate () {
     //check errors and display results to user
     if (errors.length > 0) {
         //there were errors
-        let message_html = (errors.length === 1)? "Hold on, there is an issue:<br>":"Hold on, there are some issues:<br>";
+        let message_html = (errors.length === 1)? "<span class='bold'>Hold on, there is an issue:</span><br>":"<span class='bold'>Hold on, there are some issues:</span><br>";
         errors.forEach( (error) => {
             message_html += error + "<br>";
         });
@@ -41,7 +41,7 @@ function validate () {
             errors.push("You did not enter a valid last name.");
         }
         if (email.match(email_regex) === null) {
-            errors.push("You did not enter a valid email address");
+            errors.push("You did not enter a valid email address.");
         }
         if (zip.match(zip_regex) === null) {
             errors.push("You did not enter a valid zip code.");
