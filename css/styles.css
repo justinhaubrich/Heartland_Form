@@ -23,6 +23,18 @@
  .invalid {
      background: url('../imgs/delete.svg');
  }
+#form_wrapper.dark .valid {
+    background: url('../imgs/check_dark.svg');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#form_wrapper.dark .invalid {
+    background: url('../imgs/delete_dark.svg');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 #form_wrapper .bold {
     font-weight: bold;
