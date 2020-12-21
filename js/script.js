@@ -22,7 +22,14 @@ function validate () {
         //there were errors
         let message_html = (errors.length === 1)? "<span class='bold'>Hold on, there is an issue:</span><br>":"<span class='bold'>Hold on, there are some issues:</span><br>";
         errors.forEach( (error) => {
-            message_html += error + "<br>";
+            //place the error message
+            if (error.field !== "terms") {
+                let div = document.querySelector(`#form_wrapper #${error.field} ~ .validation_message`);
+                div.innerText = error.msg;
+            } else {
+                let div = document.getElementsByClassName('terms_error')[0];
+                div.innerText = error.msg;
+            }
         });
         message_div.innerHTML = message_html;
     } else {
@@ -34,10 +41,10 @@ function validate () {
     console.log(fname, lname, email, zip, age, agreed, opt_in);
 
     function check_input (fname, lname, email, zip, age, agreed) {
-        if (fname.match(name_regex) === null) {
-            errors.push({field:"fname", msg: "ou did not enter a valid first name."});
+        if (fname.match(name_regex) === null || fname.length < 2)  {
+            errors.push({field:"fname", msg: "You did not enter a valid first name."});
         }
-        if (lname.match(name_regex) === null) {
+        if (lname.match(name_regex) === null || lname.length < 2) {
             errors.push({field: "lname", msg:"You did not enter a valid last name."});
         }
         if (email.match(email_regex) === null) {
@@ -81,4 +88,9 @@ function toggle_dark_mode() {
         p.style.color = "#FFF";
         body.style.backgroundColor = "#424242";
     }
+}
+
+function remove_msg () {
+    let div = window.event.target.parentElement.querySelector('.validation_message');
+    div.innerText = "";
 }

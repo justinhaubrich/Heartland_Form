@@ -22,28 +22,28 @@
             <form id="heartland_form">
                 <span class="input_wrapper">
                     <span class="input_icon"></span>
-                    <input type="text" id="fname" required placeholder="First Name*"/>
+                    <input type="text" id="fname" required placeholder="First Name*" onkeypress="remove_msg()"/>
                     <span class="validation_message"></span>
                 </span>
                 <span class="input_wrapper">
                     <span class="input_icon"></span>
-                    <input type="text" id="lname" required placeholder="Last Name*"/>
+                    <input type="text" id="lname" required placeholder="Last Name*" onkeypress="remove_msg()"/>
                     <span class="validation_message"></span>
                 </span>
                 <span class="input_wrapper">
                     <span class="input_icon"></span>
-                    <input type="email" id="email" required placeholder="Email*"/>
+                    <input type="email" id="email" required placeholder="Email*" onkeypress="remove_msg()"/>
                     <span class="validation_message"></span>
                 </span>
                 <span id="zip_age_wrapper">
                     <span class="input_wrapper">
                         <span class="input_icon"></span>
-                        <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10" required placeholder="Zip*"/>
+                        <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10" required placeholder="Zip*" onkeypress="remove_msg()"/>
                         <span class="validation_message"></span>
                     </span>
                     <span class="input_wrapper">
                         <span class="input_icon"></span>
-                        <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3" required placeholder="Age*"/>
+                        <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3" required placeholder="Age*" onkeypress="remove_msg()"/>
                         <span class="validation_message"></span>
                     </span>
                 </span>
@@ -51,7 +51,7 @@
                     <label>Do you agree to our terms of service?*</label>
                     <br>
                     <label>
-                        <input type="radio" id="yes" name="terms" value="yes">
+                        <input type="radio" id="yes" name="terms" value="yes" onchange="document.querySelector('.terms_error').innerText=''">
                         <span class="checkmark"></span>
                         <span class="radio-text">Yes</span>
                     </label>
@@ -60,6 +60,7 @@
                         <span class="checkmark"></span>
                         <span class="radio-text">No</span>
                     </label>
+                    <span class="terms_error"></span>
                 </span>
                 <span id="optin_wrapper">
                     <label for="opt_in">
