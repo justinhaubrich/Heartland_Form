@@ -7,6 +7,7 @@
     outline: unset;
 }
 
+
 #form_wrapper #message {
     text-align: center;
     padding-bottom: 25px;
@@ -210,6 +211,9 @@
     margin: 0 5px 0 5px;
 }
 
+#form_wrapper #opt_in {
+    display: none;
+}
 #optin_wrapper input {
     opacity: 0;
     width: 0;
@@ -331,6 +335,9 @@ input:checked + .slider:before {
     font-size: 12px;
     margin-top: 5px;
 }
+#optin_wrapper span.checkbox {
+    margin-left: 5px;
+}
 @media (max-width:850px) {
     #zip_age_wrapper {
         grid-template-columns: 1fr;
@@ -366,6 +373,8 @@ input:checked + .slider:before {
     #optin_wrapper span.checkbox {
         position: unset;
         padding: 5px 0 0 8px;
+        margin-top: 5px;
+        margin-left: 0px;
     }
     #form_wrapper #optin_wrapper label {
         align-items: center;

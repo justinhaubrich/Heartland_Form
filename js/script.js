@@ -1,9 +1,10 @@
+
 function validate () {
     const errors = [];
     //get values from the form
     const fname = document.getElementById('fname').value.trim();
     const lname = document.getElementById('lname').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const email = document.getElementById('email').value.trim().toLowerCase();
     const zip = document.getElementById('zip').value.toString();
     const age = parseInt(document.getElementById('age').value);
     const agreed = document.getElementById('yes').checked;
@@ -129,6 +130,124 @@ function validate () {
         }
     }
     console.log(errors);
+}
+
+function self_validate () {
+    console.log(window.event.target.id);
+    const errors = [];
+    const id = window.event.target.id;
+    const value = window.event.target.value.trim();
+    //get values from the form
+    const el = document.getElementById(id).value.trim();
+
+    //regexes for validation
+    const name_regex = /^[a-z.'-]+$/i;
+    const email_regex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    const zip_regex = /^\d{5}(?:[-\s]\d{4})?$/;
+
+    //validate
+    check_self_input(id);
+
+    function check_self_input (id) {
+        if (id === 'fname') {
+            if (value.match(name_regex) === null || value.length < 2)  {
+                errors.push({field:"fname", msg: "You did not enter a valid first name."});
+                let el = document.querySelector('.input_wrapper.fname .input_icon'); 
+                el.classList.remove('valid');
+                el.classList.add('invalid');
+            } else {
+                //add the icon to the input
+                let el = document.querySelector('.input_wrapper.fname .input_icon'); 
+                el.classList.remove('invalid');
+                el.classList.add('valid');
+                //clear the validation message
+                let msg = document.querySelector('.input_wrapper.fname .validation_message');
+                msg.innerText = "";
+            }
+        }
+        if (id === 'lname') {
+            let lname = value;
+            if (lname.match(name_regex) === null || lname.length < 2) {
+                errors.push({field: "lname", msg:"You did not enter a valid last name."});
+                let el = document.querySelector('.input_wrapper.lname .input_icon'); 
+                el.classList.remove('valid');
+                el.classList.add('invalid');
+            } else {
+                //add the icon to the input
+                let el = document.querySelector('.input_wrapper.lname .input_icon'); 
+                el.classList.remove('invalid');
+                el.classList.add('valid'); 
+                //clear the validation message
+                let msg = document.querySelector('.input_wrapper.lname .validation_message');
+                msg.innerText = "";
+            }
+        }
+
+        if (id === 'email') {
+            let email = value.toLowerCase();
+            if (email.match(email_regex) === null) {
+                errors.push({field: "email", msg:"You did not enter a valid email address."});
+                let el = document.querySelector('.input_wrapper.email .input_icon'); 
+                el.classList.remove('valid');
+                el.classList.add('invalid');
+            } else {
+                //add the icon to the input
+                let el = document.querySelector('.input_wrapper.email .input_icon'); 
+                el.classList.remove('invalid');
+                el.classList.add('valid'); 
+                //clear the validation message
+                let msg = document.querySelector('.input_wrapper.email .validation_message');
+                msg.innerText = "";
+            }
+        }
+
+        if (id === 'zip') {
+            let zip = value;
+            if (zip.match(zip_regex) === null) {
+                errors.push({field:"zip",msg:"You did not enter a valid zip code."});
+                let el = document.querySelector('.input_wrapper.zip .input_icon'); 
+                el.classList.remove('valid');
+                el.classList.add('invalid');
+            } else {
+                //add the icon to the input
+                let el = document.querySelector('.input_wrapper.zip .input_icon'); 
+                el.classList.remove('invalid');
+                el.classList.add('valid');
+                //clear the validation message
+                let msg = document.querySelector('.input_wrapper.zip .validation_message');
+                msg.innerText = "";
+            }
+        }
+
+        if (id === 'age') {
+            let age = value;
+            if (isNaN(age) || age < 18 || age > 110) {
+                if (isNaN(age)) {
+                    errors.push({field: "age", msg:"You must enter your age."});
+                }
+                if (age <18) {
+                    errors.push({field: "age", msg:"You must be at least 18."});
+                }
+                if (age > 110) {
+                    errors.push({field: "age", msg:"You must be enter a valid age."});
+                }
+                //add the icon to the input
+                let el = document.querySelector('.input_wrapper.age .input_icon'); 
+                el.classList.remove('valid');
+                el.classList.add('invalid');
+            } else {
+                //add the icon to the input
+                let el = document.querySelector('.input_wrapper.age .input_icon'); 
+                el.classList.remove('invalid');
+                el.classList.add('valid');
+                //clear the validation message
+                let msg = document.querySelector('.input_wrapper.age .validation_message');
+                msg.innerText = "";
+            }
+        }
+        
+
+    }
 }
 
 function toggle_dark_mode() {
