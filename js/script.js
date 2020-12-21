@@ -35,28 +35,28 @@ function validate () {
 
     function check_input (fname, lname, email, zip, age, agreed) {
         if (fname.match(name_regex) === null) {
-            errors.push("You did not enter a valid first name.");
+            errors.push({field:"fname", msg: "ou did not enter a valid first name."});
         }
         if (lname.match(name_regex) === null) {
-            errors.push("You did not enter a valid last name.");
+            errors.push({field: "lname", msg:"You did not enter a valid last name."});
         }
         if (email.match(email_regex) === null) {
-            errors.push("You did not enter a valid email address.");
+            errors.push({field: "email", msg:"You did not enter a valid email address."});
         }
         if (zip.match(zip_regex) === null) {
-            errors.push("You did not enter a valid zip code.");
+            errors.push({field:"zip",msg:"You did not enter a valid zip code."});
         }
         if (isNaN(age)) {
-            errors.push("You must enter your age.");
+            errors.push({field: "age", msg:"You must enter your age."});
         }
         if (age < 18) {
-            errors.push("You must be at least 18 years old.");
+            errors.push({field : "age",msg:"You must be at least 18 years old."});
         }
         if (age > 110) {
-            errors.push("You did not enter a valid age.");
+            errors.push({field : "age",msg:"You did not enter a valid age."});
         }
         if (!agreed) {
-            errors.push("You must agree to our terms of service.");
+            errors.push({field: "terms", msg: "You must agree to our terms of service."});
         }
     }
     console.log(errors);

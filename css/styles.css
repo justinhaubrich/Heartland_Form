@@ -22,6 +22,9 @@
     grid-template-columns: 40px 12fr;
     position: relative;
 }
+#form_wrapper .input_icon, #form_wrapper input {
+    background-color: #fff;
+}
 
 #form_wrapper .input_wrapper input {
     border: none;
@@ -303,7 +306,7 @@ input:checked + .slider:before {
     color:#03DAC5; 
     color: #fff;
 }
-#form_wrapper.dark input:hover {
+#form_wrapper.dark .input_wrapper:hover {
     border: 1px solid #03DAC5;
 }
 @media (max-width:850px) {
