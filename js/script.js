@@ -20,7 +20,7 @@ function validate () {
     //check errors and display results to user
     if (errors.length > 0) {
         //there were errors
-        let message_html = (errors.length === 1)? "<span class='bold'>Hold on, there is an issue:</span><br>":"<span class='bold'>Hold on, there are some issues:</span><br>";
+        let message_html = (errors.length === 1)? "<span class='bold'>Hold on, there is an issue.</span><br>":"<span class='bold'>Hold on, there are some issues.</span><br>";
         errors.forEach( (error) => {
             //place the error message
             if (error.field !== "terms") {
@@ -34,7 +34,10 @@ function validate () {
         message_div.innerHTML = message_html;
     } else {
         //there were no errors
-        message_div.innerText = "Thank you, your information have been received.";
+        message_div.innerText = "Thank you, your information has been received.";
+        message_div.style.paddingBottom = "0px";
+        document.querySelector('#form_wrapper #heartland_form').innerHTML = "";
+        document.querySelector('#required_notice').remove();
     }
 
     //for debugging
@@ -43,35 +46,59 @@ function validate () {
     function check_input (fname, lname, email, zip, age, agreed) {
         if (fname.match(name_regex) === null || fname.length < 2)  {
             errors.push({field:"fname", msg: "You did not enter a valid first name."});
+            let el = document.querySelector('.input_wrapper.fname .input_icon'); 
+            el.classList.remove('valid');
+            el.classList.add('invalid');
         } else {
             //add the icon to the input
             let el = document.querySelector('.input_wrapper.fname .input_icon'); 
             el.classList.remove('invalid');
             el.classList.add('valid');
+            //clear the validation message
+            let msg = document.querySelector('.input_wrapper.fname .validation_message');
+            msg.innerText = "";
         }
         if (lname.match(name_regex) === null || lname.length < 2) {
             errors.push({field: "lname", msg:"You did not enter a valid last name."});
+            let el = document.querySelector('.input_wrapper.lname .input_icon'); 
+            el.classList.remove('valid');
+            el.classList.add('invalid');
         } else {
             //add the icon to the input
             let el = document.querySelector('.input_wrapper.lname .input_icon'); 
             el.classList.remove('invalid');
-            el.classList.add('valid');
+            el.classList.add('valid'); 
+            //clear the validation message
+            let msg = document.querySelector('.input_wrapper.lname .validation_message');
+            msg.innerText = "";
         }
         if (email.match(email_regex) === null) {
             errors.push({field: "email", msg:"You did not enter a valid email address."});
+            let el = document.querySelector('.input_wrapper.email .input_icon'); 
+            el.classList.remove('valid');
+            el.classList.add('invalid');
         } else {
             //add the icon to the input
             let el = document.querySelector('.input_wrapper.email .input_icon'); 
             el.classList.remove('invalid');
-            el.classList.add('valid');
+            el.classList.add('valid'); 
+            //clear the validation message
+            let msg = document.querySelector('.input_wrapper.email .validation_message');
+            msg.innerText = "";
         }
         if (zip.match(zip_regex) === null) {
             errors.push({field:"zip",msg:"You did not enter a valid zip code."});
+            let el = document.querySelector('.input_wrapper.zip .input_icon'); 
+            el.classList.remove('valid');
+            el.classList.add('invalid');
         } else {
             //add the icon to the input
             let el = document.querySelector('.input_wrapper.zip .input_icon'); 
             el.classList.remove('invalid');
             el.classList.add('valid');
+            //clear the validation message
+            let msg = document.querySelector('.input_wrapper.zip .validation_message');
+            msg.innerText = "";
         }
         if (isNaN(age) || age < 18 || age > 110) {
             if (isNaN(age)) {
@@ -92,6 +119,9 @@ function validate () {
             let el = document.querySelector('.input_wrapper.age .input_icon'); 
             el.classList.remove('invalid');
             el.classList.add('valid');
+            //clear the validation message
+            let msg = document.querySelector('.input_wrapper.age .validation_message');
+            msg.innerText = "";
         }
        
         if (!agreed) {

@@ -6,10 +6,22 @@
 *:focus {
     outline: unset;
 }
+
 #form_wrapper #message {
     text-align: center;
     padding-bottom: 25px;
 }
+#form_wrapper .input_icon.valid, #form_wrapper .input_icon.invalid {
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ .valid {
+     background: url('../imgs/check.svg');
+ }
+ .invalid {
+     background: url('../imgs/delete.svg');
+ }
 
 #form_wrapper .bold {
     font-weight: bold;
