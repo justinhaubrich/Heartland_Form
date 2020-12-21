@@ -33,6 +33,7 @@
     display: grid;
     grid-template-columns: 40px 12fr;
     position: relative;
+    background-color: white;
 }
 #form_wrapper .input_icon, #form_wrapper input {
     background-color: #fff;
