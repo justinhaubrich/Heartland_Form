@@ -20,17 +20,12 @@
         <div id="form_wrapper">
             <div id="message">Welcome!</div>
             <form id="heartland_form">
-                <label for="fname">First Name*</label>
-                <input type="text" id="fname"/>
-                <label for="lname">Last Name*</label>
-                <input type="text" id="lname"/>
-                <label for="email">Email*</label>
-                <input type="email" id="email"/>
+                <input type="text" id="fname" required placeholder="First Name*"/>
+                <input type="text" id="lname" required placeholder="Last Name*"/>
+                <input type="email" id="email" required placeholder="Email*"/>
                 <span id="zip_age_wrapper">
-                    <label for="zip">Zip*</label>
-                    <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10"/>
-                    <label for="age">Age*</label>
-                    <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3"/>
+                    <input type="text" id="zip" onkeyup="this.value=this.value.replace(/[^\d-]/,'')" maxlength="10" required placeholder="Zip*"/>
+                    <input type="text" id="age" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="3" required placeholder="Age*"/>
                 </span>
                 <span id="terms_radios">
                     <label>Do you agree to our terms of service?*</label>
