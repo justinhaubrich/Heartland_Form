@@ -1,3 +1,7 @@
+//regexes for validation
+const name_regex = /^[a-z.'-]+$/i;
+const email_regex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+const zip_regex = /^\d{5}(?:[-\s]\d{4})?$/;
 
 function validate () {
     const errors = [];
@@ -10,11 +14,6 @@ function validate () {
     const agreed = document.getElementById('yes').checked;
     const opt_in = document.getElementById('opt_in').checked;
     const message_div = document.getElementById("message");
-
-    //regexes for validation
-    const name_regex = /^[a-z.'-]+$/i;
-    const email_regex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    const zip_regex = /^\d{5}(?:[-\s]\d{4})?$/;
 
     check_input(fname, lname, email, zip, age, agreed);
 
@@ -42,7 +41,6 @@ function validate () {
     }
 
     //for debugging
-    console.log(fname, lname, email, zip, age, agreed, opt_in);
 
     function check_input (fname, lname, email, zip, age, agreed) {
         if (fname.match(name_regex) === null || fname.length < 2)  {
@@ -129,21 +127,16 @@ function validate () {
             errors.push({field: "terms", msg: "You must agree to our terms of service."});
         }
     }
-    console.log(errors);
 }
 
 function self_validate () {
-    console.log(window.event.target.id);
     const errors = [];
     const id = window.event.target.id;
     const value = window.event.target.value.trim();
     //get values from the form
     const el = document.getElementById(id).value.trim();
 
-    //regexes for validation
-    const name_regex = /^[a-z.'-]+$/i;
-    const email_regex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    const zip_regex = /^\d{5}(?:[-\s]\d{4})?$/;
+
 
     //validate
     check_self_input(id);
